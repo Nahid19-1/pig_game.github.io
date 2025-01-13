@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 400;
+  height: 100vh;
+  background: linear-gradient(
+    to top,
+    #7ec850 30%,
+    #b3e5fc 100%
+  ); /* Grass and sky gradient */
+  color: #2e2e2e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* LAYOUT */
+main {
+  position: relative;
+  width: 100rem;
+  height: 60rem;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px) saturate(120%);
+  box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.15);
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  display: flex;
+}
+
+/* PLAYER SECTION */
+.player {
+  flex: 50%;
+  padding: 7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.5s ease;
+}
+
+/* PLAYER NAME */
+.name {
+  font-size: 4.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 400;
+  color: #2e4a62;
+  margin-bottom: 2rem;
+}
+
+/* PLAYER SCORE */
+.score {
+  font-size: 8.5rem;
+  font-weight: 300;
+  color: #558b2f; /* Earthy green */
+  margin-bottom: auto;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* ACTIVE PLAYER STYLING */
+.player--active {
+  background: rgba(0, 0, 0, 0.1); /* Slightly darker background */
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3), 0 0 15px rgba(0, 0, 0, 0.1); /* Adds realism */
+}
+
+.player--active .name {
+  font-weight: 700;
+  color: #558b2f;
+}
+
+.player--active .score {
+  color: #558b2f;
+  font-weight: 400;
+  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+}
+
+.player--active .current {
+  opacity: 1;
+}
+
+/* CURRENT SCORE DISPLAY */
+.current {
+  background: linear-gradient(
+    135deg,
+    #558b2f,
+    #7ec850
+  ); /* Subtle green gradient */
+  opacity: 0.95;
+  border-radius: 12px;
+  color: #fff;
+  width: 70%;
+  padding: 2.5rem;
+  text-align: center;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.current-label {
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  color: #c8e6c9; /* Light grass green */
+}
+
+.current-score {
+  font-size: 4rem;
+}
+
+/* BUTTONS */
+.btn {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #2e2e2e;
+  font-family: inherit;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: 600;
+  border: none;
+  padding: 1rem 3rem;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.btn::first-letter {
+  font-size: 2rem;
+  margin-right: 0.5rem;
+  color: #558b2f;
+}
+
+.btn:hover {
+  background: linear-gradient(
+    135deg,
+    #558b2f,
+    #7ec850
+  ); /* Matches active player's theme */
+  color: #fff;
+  box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+  transform: translate(-50%, 2px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+.btn--new {
+  top: 3rem;
+}
+.btn--roll {
+  top: 38rem;
+}
+.btn--hold {
+  top: 45rem;
+}
+
+/* DICE IMAGE */
+.dice {
+  position: absolute;
+  left: 50%;
+  top: 17rem;
+  transform: translateX(-50%);
+  height: 10rem;
+  box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.15);
+}
+
+/* WINNER PLAYER STYLING */
+.player--winner {
+  background: #1d391f;
+  box-shadow: 0 5px 15px rgba(49, 45, 45, 0.4);
+}
+
+.player--winner .name {
+  font-weight: 700;
+  color: #2196f3; /* Blue for a celebratory effect */
+  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* HIDDEN ELEMENTS */
+.hidden {
+  display: none;
+}
